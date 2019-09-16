@@ -10,7 +10,12 @@ public class uppgift1 {
 		System.out.println("Hur gammal är du?");
 		String str2 = input.nextLine();
 		
-		System.out.println(str2);
+		System.out.println("Vad är din adress");
+		String str3 = input.nextLine();
+		
+		System.out.println("Vad är din adress");
+		String str4 = input.nextLine();
+		
 		
 		
 		
