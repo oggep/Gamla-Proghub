@@ -22,6 +22,9 @@ public class uppgift1 {
 		System.out.println("Vad ‰r ditt telefonnummer?");
 		String str6 = input.nextLine();
 		
+		System.out.println("\nInformation:");
+		System.out.println("\nNamn:\t" + str + "\n≈lder:\t" + str2 + "\nAdress:\t" + str3 + "\n\t" + str4 + str5 " );
+		
 		
 		
 		
