@@ -11,7 +11,7 @@ public class Fysikuppgift {
 		System.out.println(fahrenheitToCelsius(50));
 		System.out.println(kelvinToCelsius(0));
 		System.out.println(fluidPressure(FluidTable.H20,  10));
-		
+		System.out.println(PressureUnderwater(10));
 	
 	}
 	public static double fahrenheitToCelsius(double fahrenheit) {
@@ -23,8 +23,12 @@ public class Fysikuppgift {
 		return kelvinToCelsius;
 		}
 	public static double fluidPressure(FluidTable fluid, double deep) {
-		double fluidPressure = 10 * G * fluid.density;
+		double fluidPressure = deep * G * fluid.density;
+		return fluidPressure;
+		}
+	public static double PressureUnderwater(double deep) {
+		double fluidPressure = deep * G * FluidTable.H20.density;
 		return fluidPressure;
 		}
 	
-}
+}	
