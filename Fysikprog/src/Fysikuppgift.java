@@ -9,15 +9,17 @@ public class Fysikuppgift {
 	
 	public static void main(String[] args) {
 		System.out.println(fahrenheitToCelsius(50));
+		System.out.println(kelvinToCelsius(0));
 		
 	
 	}
 	public static double fahrenheitToCelsius(double fahrenheit) {
 		double Celsius = (fahrenheit-32)*5/9;
-
-		System.out.println("50 degrees Fahrenheit to Celsius is:");
 		return Celsius;
 		}
-	
+	public static double kelvinToCelsius(double kelvin) {
+		double kelvinToCelsius = kelvin - 273.15;
+		return kelvinToCelsius;
+		}
 	
 }
