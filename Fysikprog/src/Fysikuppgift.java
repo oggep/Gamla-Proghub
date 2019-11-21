@@ -10,6 +10,7 @@ public class Fysikuppgift {
 	public static void main(String[] args) {
 		System.out.println(fahrenheitToCelsius(50));
 		System.out.println(kelvinToCelsius(0));
+		System.out.println(fluidPressure(FluidTable.H20,  10));
 		
 	
 	}
@@ -20,6 +21,10 @@ public class Fysikuppgift {
 	public static double kelvinToCelsius(double kelvin) {
 		double kelvinToCelsius = kelvin - 273.15;
 		return kelvinToCelsius;
+		}
+	public static double fluidPressure(FluidTable fluid, double deep) {
+		double fluidPressure = 10 * G * fluid.density;
+		return fluidPressure;
 		}
 	
 }
