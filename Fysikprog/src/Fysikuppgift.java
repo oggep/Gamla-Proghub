@@ -8,5 +8,16 @@ public class Fysikuppgift {
 	static double g_swe = 9.82;
 	
 	public static void main(String[] args) {
+		System.out.println(fahrenheitToCelsius(50));
+		
+	
 	}
+	public static double fahrenheitToCelsius(double fahrenheit) {
+		double Celsius = (fahrenheit-32)*5/9;
+
+		System.out.println("50 degrees Fahrenheit to Celsius is:");
+		return Celsius;
+		}
+	
+	
 }
