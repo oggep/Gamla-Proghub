@@ -3,7 +3,7 @@ import java.lang.Math;
 public class Fysikuppgift {
  
 	
-	static double G = 9.82;
+	//static double G = 6.673*(Math.pow"−11"(10);
 	static double R = 8.31446;
 	static double p_0 = 1000;
 	static double C = 299792458;
@@ -15,6 +15,12 @@ public class Fysikuppgift {
 		System.out.println(fluidPressure(FluidTable.H20, 10));
 		System.out.println(pressureUnderwater(10));
 		System.out.println(kineticEnergy(2, 2));
+		System.out.println(potentialEnergy(2, 5));
+		System.out.println(fallSpeed(2.5));
+		System.out.println(delta(1, 10));
+		System.out.println(delta(5, 1));
+		System.out.println(volumeToMass(FluidTable.WATER,1));
+		System.out.println(volumeToMass(GasTable.AIR,1));
 	}
 	/**
 	 * This method calculates farenheit to celcius.
@@ -32,12 +38,12 @@ public class Fysikuppgift {
 		}
 	
 	public static double fluidPressure(FluidTable fluid, double deep) {
-		double fluidPressure = deep * G * fluid.density;
+		double fluidPressure = deep * g_swe * fluid.density;
 		return fluidPressure;
 		}
 	
 	public static double pressureUnderwater(double deep) {
-		double fluidPressure = deep * G * FluidTable.H20.density;
+		double fluidPressure = deep * g_swe * FluidTable.H20.density;
 		return fluidPressure;
 		}
 	
@@ -45,6 +51,27 @@ public class Fysikuppgift {
 		double kineticEnergy= 0.5 * mass * (Math.pow(velocity, 2));
 		return kineticEnergy;
 		}
+	public static double potentialEnergy(double mass, double height) {
+		double potentialEnergy = mass * g_swe * height;
+		return potentialEnergy;
+		}
 	
+	public static double fallSpeed(double height) {
+		double fallSpeed = (Math.sqrt((2 * height)/ g_swe) * g_swe);
+		return fallSpeed;
+		}
+	public static double delta(double first, double last){
+		double delta = last - first;
+		return delta;
+	}
+	public static double volumeToMass(FluidTable fluid, double volume) {
+		double volumeToMass = fluid.density * volume;
+		return volumeToMass;
+	}
+	public static double volumeToMass(GasTable gas, double volume) {
+		double volumeToMass = gas.density * volume;
+		return volumeToMass;
+		
+	}
 	
 }	
