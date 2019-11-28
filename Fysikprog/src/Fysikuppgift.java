@@ -24,6 +24,8 @@ public class Fysikuppgift {
 		System.out.println(volumeToMass(SolidTable.IRON,1));
 		System.out.println(svtVelocity(10,5));
 		System.out.println(svtDistance(10,5));
+		System.out.println(svtTime(10,2));
+		System.out.println(work(50,10));
 	}
 	/**
 	 * This method calculates farenheit to celcius.
@@ -90,7 +92,11 @@ public class Fysikuppgift {
 		return svtDistance;
 	}
 	public static double svtTime(double distance, double velocity) {
-	double svtTime = distance / velocity;
-	return svtTime;
+		double svtTime = distance / velocity;
+		return svtTime;
+	}
+	public static double work(double force, double distance) {
+		double work = force * distance;
+		return work;
 	}
 }	
