@@ -89,4 +89,8 @@ public class Fysikuppgift {
 		double svtDistance = velocity * time;
 		return svtDistance;
 	}
+	public static double svtTime(double distance, double velocity) {
+	double svtTime = distance / velocity;
+	return svtTime;
+	}
 }	
