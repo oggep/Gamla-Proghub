@@ -170,24 +170,56 @@ public class Fysikuppgift {
 		double svtTime = distance / velocity;
 		return svtTime;
 	}
+	/**
+	 * This method calculates the work from force and distance
+	 * @param force
+	 * @param distance
+	 * @return work
+	 */
 	public static double work(double force, double distance) {
 		double work = force * distance;
 		return work;
 	}
+	/**
+	 * This method calculates the power from work and time
+	 * @param work
+	 * @param time
+	 * @return work
+	 */
 	public static double power(double work, double time) {
 		double power = work / time;
 		return power;
 	}
-	
+	/**
+	 * This method calculates the heat on a solid with mass and deltaT
+	 * @param heatcapacity
+	 * @param mass
+	 * @param deltaT
+	 * @return heat
+	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		double heat = solid.heatCapacity * mass * deltaT;
 		return heat;
 		
 	}
+	/**
+	 * This method calculates the heat on a fluid with mass and deltaT
+	 * @param heatcapacity
+	 * @param mass
+	 * @param deltaT
+	 * @return heat
+	 */
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
 		double heat = fluid.heatCapacity * mass * deltaT;
 		return heat;
 	}
+	/**
+	 * This method calculates the heat on a gas with mass and deltaT
+	 * @param heatcapacity
+	 * @param mass
+	 * @param deltaT
+	 * @return work
+	 */
 	public static double heat(GasTable gas, double mass, double deltaT) {
 		double heat = gas.heatCapacity * mass * deltaT;
 		return heat;
