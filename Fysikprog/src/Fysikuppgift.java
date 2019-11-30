@@ -40,16 +40,31 @@ public class Fysikuppgift {
 		double Celsius = (fahrenheit-32)*5/9;
 		return Celsius;
 		}
-	
+	/**
+	 * This method calculates kelvin to celcius.
+	 * @param kelvin
+	 * @return celsius
+	 */
 	public static double kelvinToCelsius(double kelvin) {
 		double kelvinToCelsius = kelvin - 273.15;
 		return kelvinToCelsius;
 		}
+	/**
+	 * This method calculates the pressure in diffrent fluids och diffrent deeps
+	 * @param fluid
+	 * @param deep
+	 * @return fluidPressure
+	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = deep * g_swe * fluid.density;
 		return fluidPressure;
 		}
-	
+	/**
+	 * This method calculates the pressure in water under diffrent deeps 
+	 * @param water
+	 * @param deep
+	 * @return fluidPressure
+	 */
 	public static double pressureUnderwater(double deep) {
 		double fluidPressure = deep * g_swe * FluidTable.H20.density;
 		return fluidPressure;
@@ -119,6 +134,10 @@ public class Fysikuppgift {
 	public static double heat(GasTable gas, double mass, double deltaT) {
 		double heat = gas.heatCapacity * mass * deltaT;
 		return heat;
+	}
+	public static double velocityToHeight(double velocity) {
+		double velocityToHeight = (Math.pow())
+		
 	}
 }
 	
