@@ -105,6 +105,11 @@ public class Fysikuppgift {
 		return power;
 	}
 	
+	public static double heat(SolidTable solid, double mass, double deltaT) {
+		double heat = solid.heatCapacity * mass * deltaT;
+		return heat;
+		
+	}
 	
+}
 	
-}	
