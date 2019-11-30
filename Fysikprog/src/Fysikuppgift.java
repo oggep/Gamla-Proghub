@@ -27,6 +27,7 @@ public class Fysikuppgift {
 		System.out.println(svtTime(10,2));
 		System.out.println(work(50,10));
 		System.out.println(power(1000,2));
+		System.out.println(heat(SolidTable.IRON,1,2));
 	}
 	/**
 	 * This method calculates farenheit to celcius.
