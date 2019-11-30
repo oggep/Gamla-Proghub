@@ -98,32 +98,74 @@ public class Fysikuppgift {
 		double fallSpeed = (Math.sqrt((2 * height)/ g_swe) * g_swe);
 		return fallSpeed;
 		}
+	/**
+	 * This method calculates delta
+	 * @param first
+	 * @param last
+	 * @return delta
+	 */
 	public static double delta(double first, double last){
 		double delta = last - first;
 		return delta;
 	}
+	/**
+	 * This method calculates the volume of a fluid to mass
+	 * @param fluid
+	 * @param volume
+	 * @return volumeToMass
+	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
 		double volumeToMass = fluid.density * volume;
 		return volumeToMass;
 	}
+	/**
+	 * This method calculates the volume of a gas to mass
+	 * @param gas
+	 * @param volume
+	 * @return volumeToMass
+	 */
 	public static double volumeToMass(GasTable gas, double volume) {
 		double volumeToMass = gas.density * volume;
 		return volumeToMass;
 		
 	}
+	/**
+	 * This method calculates the volume of a solid to mass
+	 * @param solid
+	 * @param volume
+	 * @return volumeToMass
+	 */
 	public static double volumeToMass(SolidTable solid, double volume) {
 		double volumeToMass = solid.density * volume;
 		return volumeToMass;
 		
 	}
+	/**
+	 * This method calculates the velocity from distance and time
+	 * @param distance
+	 * @param time
+	 * @return svtVelocity
+	 */
 	public static double svtVelocity(double distance, double time) {
 		double svtVelocity = distance / time;
 		return svtVelocity;
 	}
+	/**
+	 * This method calculates the distance from velocity and time
+	 * @param velocity
+	 * @param time
+	 * @return svtDistance
+	 */
 	public static double svtDistance(double velocity, double time) {
 		double svtDistance = velocity * time;
 		return svtDistance;
 	}
+	/**
+	 * This method calculates the time from the distance and velocity
+	 * @param distance
+	 * @param velocity
+	 * @return svtTime
+	 */
 	public static double svtTime(double distance, double velocity) {
 		double svtTime = distance / velocity;
 		return svtTime;
