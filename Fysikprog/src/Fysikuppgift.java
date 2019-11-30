@@ -12,7 +12,7 @@ public class Fysikuppgift {
 	public static void main(String[] args) {
 		System.out.println(fahrenheitToCelsius(50));
 		System.out.println(kelvinToCelsius(0));
-		System.out.println(fluidPressure(FluidTable.H20, 10));
+		System.out.println(fluidPressure(FluidTable.WATER, 10));
 		System.out.println(pressureUnderwater(10));
 		System.out.println(kineticEnergy(2, 2));
 		System.out.println(potentialEnergy(2, 5));
@@ -28,7 +28,7 @@ public class Fysikuppgift {
 		System.out.println(work(50,10));
 		System.out.println(power(1000,2));
 		System.out.println(heat(SolidTable.IRON,1,2));
-		System.out.println(heat(FluidTable.H20,1,10));
+		System.out.println(heat(FluidTable.WATER, 1, 10));
 		System.out.println(heat(GasTable.AIR,1,1));
 	}
 	/**
@@ -66,7 +66,7 @@ public class Fysikuppgift {
 	 * @return fluidPressure
 	 */
 	public static double pressureUnderwater(double deep) {
-		double fluidPressure = deep * g_swe * FluidTable.H20.density;
+		double fluidPressure = deep * g_swe * FluidTable.WATER.density;
 		return fluidPressure;
 		}
 	/**
@@ -224,9 +224,6 @@ public class Fysikuppgift {
 		double heat = gas.heatCapacity * mass * deltaT;
 		return heat;
 	}
-	public static double velocityToHeight(double velocity) {
-		double velocityToHeight = (Math.pow())
-		
-	}
+	
 }
 	
