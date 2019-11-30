@@ -69,16 +69,31 @@ public class Fysikuppgift {
 		double fluidPressure = deep * g_swe * FluidTable.H20.density;
 		return fluidPressure;
 		}
-	
+	/**
+	 * This method calculates the kineticenergy
+	 * @param mass
+	 * @param velocity
+	 * @return kineticEnergy
+	 */
 	public static double kineticEnergy(double mass, double velocity) {
 		double kineticEnergy= 0.5 * mass * (Math.pow(velocity, 2));
 		return kineticEnergy;
 		}
+	/**
+	 * This method calculates the kineticenergy
+	 * @param mass
+	 * @param height
+	 * @return potentialEnergy
+	 */
 	public static double potentialEnergy(double mass, double height) {
 		double potentialEnergy = mass * g_swe * height;
 		return potentialEnergy;
 		}
-	
+	/**
+	 * This method calculates the fallspeed
+	 * @param height
+	 * @return fallSpeed
+	 */
 	public static double fallSpeed(double height) {
 		double fallSpeed = (Math.sqrt((2 * height)/ g_swe) * g_swe);
 		return fallSpeed;
