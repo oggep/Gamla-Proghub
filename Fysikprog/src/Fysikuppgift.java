@@ -29,6 +29,7 @@ public class Fysikuppgift {
 		System.out.println(power(1000,2));
 		System.out.println(heat(SolidTable.IRON,1,2));
 		System.out.println(heat(FluidTable.H20,1,10));
+		System.out.println(heat(GasTable.AIR,1,1));
 	}
 	/**
 	 * This method calculates farenheit to celcius.
@@ -44,7 +45,6 @@ public class Fysikuppgift {
 		double kelvinToCelsius = kelvin - 273.15;
 		return kelvinToCelsius;
 		}
-	
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = deep * g_swe * fluid.density;
 		return fluidPressure;
@@ -114,6 +114,10 @@ public class Fysikuppgift {
 	}
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
 		double heat = fluid.heatCapacity * mass * deltaT;
+		return heat;
+	}
+	public static double heat(GasTable gas, double mass, double deltaT) {
+		double heat = gas.heatCapacity * mass * deltaT;
 		return heat;
 	}
 }
