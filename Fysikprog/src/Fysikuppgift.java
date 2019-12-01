@@ -10,28 +10,11 @@ public class Fysikuppgift {
 	static double g_swe = 9.82;
 	
 	public static void main(String[] args) {
-		System.out.println(fahrenheitToCelsius(50));
-		System.out.println(kelvinToCelsius(0));
-		System.out.println(fluidPressure(FluidTable.WATER, 10));
-		System.out.println(pressureUnderwater(10));
-		System.out.println(kineticEnergy(2, 2));
-		System.out.println(potentialEnergy(2, 5));
-		System.out.println(fallSpeed(2.5));
-		System.out.println(delta(1, 10));
-		System.out.println(delta(5, 1));
-		System.out.println(volumeToMass(FluidTable.WATER,1));
-		System.out.println(volumeToMass(GasTable.AIR,1));
-		System.out.println(volumeToMass(SolidTable.IRON,1));
-		System.out.println(svtVelocity(10,5));
-		System.out.println(svtDistance(10,5));
-		System.out.println(svtTime(10,2));
-		System.out.println(work(50,10));
-		System.out.println(power(1000,2));
-		System.out.println(heat(SolidTable.IRON,1,2));
-		System.out.println(heat(FluidTable.WATER, 1, 10));
-		System.out.println(heat(GasTable.AIR,1,1));
-		System.out.println(velocityToHeight(9.82));
-		System.out.println(pressure(100, 10));
+		//Hur mycket väger 60 dm^3 järn?
+		System.out.println(volumeToMass(SolidTable.IRON, 60));
+		//Hur långt hinner Tomas om han löper med medelhastigheten 2.7 m/s i 50 minuter?
+		
+				
 	}
 	/**
 	 * This method calculates farenheit to celcius.
@@ -249,7 +232,30 @@ public class Fysikuppgift {
 		double newton4 = (mass1 - mass2)/Math.pow(radius, 2);
 		return newton4;
 	}
-	public static double hookeslag(double fjaderkonstant, double fjaderforlangning)
+	public static double hookeslag(double fjaderkonstant, double fjaderforlangning) {
+		double hookeslag= fjaderkonstant * fjaderforlangning;
+		return hookeslag;
+	}
+	public static double resistens(double polspanning, double likstrom) {
+		double resistens = polspanning / likstrom;
+		return resistens;
+	}
+	public static double ohm(double resistens, double likstrom) {
+		double ohm = resistens * likstrom;
+		return ohm;
+	}
+	public static double els(double time, double likstrom) {
+		double els = time * likstrom;
+		return els;
+	}
+	public static double es(double electricenergy, double kondens) {
+		double es = electricenergy / kondens;
+		return es;
+	}
+	public static double impuls(double force, double deltime) {
+		double impuls = force * deltime;
+		return impuls;
+	}
 	
 }
 	
