@@ -31,11 +31,15 @@ public class Fysikuppgift {
 		//En studsboll som väger 1kg släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter? 
 		 System.out.println("uppgift 7 [Stutsar]");
 		 System.out.println(b(1, 12));
-		//hur mycket arbete behövs för att trycka ett förmål med kraften 500 N 100 meter?
-		 System.out.println("uppgift 8 [J]");
-		 System.out.println(work(500, 100));
-		//
-		
+		//Vad här rörelsemängden för en hund som väger 8 kg och har en hasighet på 4 m/s 
+		 System.out.println("uppgift 8 [Kgm/s]");
+		 System.out.println(momentum(8, 4));
+		//Vad är trycket om en skoklack med en area på 2 cm^2 trampar på din fot med en kraft på 200 N
+		 System.out.println("uppgift 9 [Pa]");
+		 System.out.println(pressure(400, 0.0002));
+		//hur hög är accelerationen 0-100 på 3 sekunder
+		 System.out.println("uppgift 10 [m/s^2]");
+		 System.out.println(acceleration(100, 5));
 	}
 	/**
 	 * This method calculates farenheit to celcius.
@@ -231,52 +235,122 @@ public class Fysikuppgift {
 		double heat = gas.heatCapacity * mass * deltaT;
 		return heat;
 	}
-	
+	/**
+	 * This method calculates the velocity to height
+	 * @param velocity
+	 * @return VelocityToHeight
+	 */
     public static double velocityToHeight(double velocity){
 
         double velocityToHeight = Math.pow(velocity, 2) / (2 * g_swe);
         return velocityToHeight;
     }
+    /**
+	 * This method calculates the pressure
+	 * @param Force
+	 * @param area
+	 * @return pressure
+	 */
 	public static double pressure(double force, double area) {
 		double pressure = force/area;
 		return pressure;
 	}
+	 /**
+		 * This method calculates the momentum
+		 * @param mass
+		 * @param velocity
+		 * @return momentum
+		 */
 	public static double momentum(double mass, double velocity) {
 		double momentum = mass * velocity;
 		return momentum;
 	}
+	 /**
+		 * This method calculates the force
+		 * @param mass
+		 * @param acceleration
+		 * @return force
+		 */
 	public static double force(double mass, double acceleration) {
 		double force = mass * acceleration;
 		return force;
 	}
+	 /**
+	 * This method calculates the gravition
+	 * @param mass
+	 * @param radius
+	 * @return newton4
+	 */
 	public static double newton4(double mass1, double mass2, double radius) {
 		double newton4 = (mass1 - mass2)/Math.pow(radius, 2);
 		return newton4;
 	}
+	 /**
+		 * beräknar hookes lag
+		 * @param fjäderkonstant
+		 * @param fjäderförlängning
+		 * @return hookeslag
+		 */
 	public static double hookeslag(double fjaderkonstant, double fjaderforlangning) {
 		double hookeslag= fjaderkonstant * fjaderforlangning;
 		return hookeslag;
 	}
+	/**
+	 * beräknar resistensen
+	 * @param polspänning
+	 * @param likström
+	 * @return resistens
+	 */
 	public static double resistens(double polspanning, double likstrom) {
 		double resistens = polspanning / likstrom;
 		return resistens;
 	}
+	/**
+	 * beräknar ohm
+	 * @param resistens
+	 * @param likström
+	 * @return ohm
+	 */
 	public static double ohm(double resistens, double likstrom) {
 		double ohm = resistens * likstrom;
 		return ohm;
 	}
+	/**
+	 * beräknar elektrisk laddning och ström
+	 * @param tid
+	 * @param likström
+	 * @return elektrisk laddning och ström
+	 */
 	public static double els(double time, double likstrom) {
 		double els = time * likstrom;
 		return els;
 	}
+	/**
+	 * beräknar elektrisk spänning
+	 * @param tid
+	 * @param likström
+	 * @return elektrisk laddning och ström
+	 */
 	public static double es(double electricenergy, double kondens) {
 		double es = electricenergy / kondens;
 		return es;
 	}
-	public static double impuls(double force, double deltime) {
-		double impuls = force * deltime;
-		return impuls;
+	/**
+	 * This method calculates the impulse
+	 * @param force
+	 * @param delta time
+	 * @return impulse
+	 */
+	public static double impulse(double force, double deltime) {
+		double impulse = force * deltime;
+		return impulse;
 	}
+	/**
+	 * This method calculates the acceleration
+	 * @param velocity
+	 * @param time
+	 * @return acceleration
+	 */
 	public static double acceleration(double velocity, double time) {
 		double acceleration = velocity / time;
 		return acceleration;
