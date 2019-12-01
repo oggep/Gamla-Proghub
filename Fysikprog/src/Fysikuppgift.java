@@ -30,6 +30,8 @@ public class Fysikuppgift {
 		System.out.println(heat(SolidTable.IRON,1,2));
 		System.out.println(heat(FluidTable.WATER, 1, 10));
 		System.out.println(heat(GasTable.AIR,1,1));
+		
+		System.out.println(pressure(100, 10));
 	}
 	/**
 	 * This method calculates farenheit to celcius.
@@ -226,5 +228,9 @@ public class Fysikuppgift {
 		return heat;
 	}
 	
+	public static double pressure(double force, double area) {
+		double pressure = force/area;
+		return pressure;
+	}
 }
 	
