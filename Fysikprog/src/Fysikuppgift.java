@@ -55,6 +55,7 @@ public class Fysikuppgift {
 	 * @param deep
 	 * @return fluidPressure
 	 */
+	
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = deep * g_swe * fluid.density;
 		return fluidPressure;
