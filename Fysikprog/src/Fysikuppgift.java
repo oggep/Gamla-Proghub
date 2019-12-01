@@ -3,7 +3,7 @@ import java.lang.Math;
 public class Fysikuppgift {
  
 	
-	//static double G = 6.673*(Math.pow"−11"(10);
+	static double G = 6.674 * Math.pow(10, -11); 
 	static double R = 8.31446;
 	static double p_0 = 1000;
 	static double C = 299792458;
@@ -237,5 +237,19 @@ public class Fysikuppgift {
 		double pressure = force/area;
 		return pressure;
 	}
+	public static double momentum(double mass, double velocity) {
+		double momentum = mass * velocity;
+		return momentum;
+	}
+	public static double force(double mass, double acceleration) {
+		double force = mass * acceleration;
+		return force;
+	}
+	public static double newton4(double mass1, double mass2, double radius) {
+		double newton4 = (mass1 - mass2)/Math.pow(radius, 2);
+		return newton4;
+	}
+	public static double hookeslag(double fjaderkonstant, double fjaderforlangning)
+	
 }
 	
