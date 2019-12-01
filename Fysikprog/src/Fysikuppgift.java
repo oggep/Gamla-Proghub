@@ -11,10 +11,31 @@ public class Fysikuppgift {
 	
 	public static void main(String[] args) {
 		//Hur mycket väger 60 dm^3 järn?
+		System.out.println("uppgift 1 [M]");
 		System.out.println(volumeToMass(SolidTable.IRON, 60));
 		//Hur långt hinner Tomas om han löper med medelhastigheten 2.7 m/s i 50 minuter?
+		System.out.println("uppgift 2 [Meter]");
+		System.out.println(svtDistance(2.7, 50 * 60));
+		//Hur mycket energi krävs för att värma upp 4 liter vatten från rumstemperatur (22 grader) till kokpunkten?
+		System.out.println("uppgift 3 [J]");
+		 System.out.println(heat(FluidTable.WATER, 4, 22));
+		//Hur stort är det totala trycket 75 meter under havsytan?
+		 System.out.println("uppgift 4 [Pascal]");
+		 System.out.println(pressureUnderwater(75));
+		//Tomas som är 180cm lång kastar upp en boll med massan 250 gram i luften så den får starthastigheten 60 km/h. Hur högt kommer bollen?
+		 System.out.println("uppgift 5 [Höjd]");
+		 System.out.println(velocityToHeight(16.7) + 1.8);
+		//En bil med massan 735kg accelererar med konstant acceleration från 0-100 på 4.8 sekunder. Hur stor effekt har bilens motor uppnått?
+		 System.out.println("uppgift 6 [W]");
+		 System.out.println(power(kineticEnergy(735, 100 / 3.6), 4.8));
+		//En studsboll som väger 1kg släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter? 
+		 System.out.println("uppgift 7 [Stutsar]");
+		 System.out.println(b(1, 12));
+		//hur mycket arbete behövs för att trycka ett förmål med kraften 500 N 100 meter?
+		 System.out.println("uppgift 8 [J]");
+		 System.out.println(work(500, 100));
+		//
 		
-				
 	}
 	/**
 	 * This method calculates farenheit to celcius.
@@ -256,6 +277,25 @@ public class Fysikuppgift {
 		double impuls = force * deltime;
 		return impuls;
 	}
+	public static double acceleration(double velocity, double time) {
+		double acceleration = velocity / time;
+		return acceleration;
+		
+	}
+
 	
-}
+	public static int b(double mass, double Height) {
+		        double PotentialEnergy = mass * Height * g_swe;
+		        int touch = 0;
+		        double b = 12;
+		        while (b >= 0.5) {
+		        	PotentialEnergy *= 0.99;
+		            b =  PotentialEnergy / g_swe;
+		            touch++;
+		        }
+		        return touch;
+		    }
+	
+		
+	}
 	
