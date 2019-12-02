@@ -36,6 +36,18 @@ public class arrayförklaring {
 			banan[i] = i * 7;
 			System.out.println(banan[i]);
 			}
-	}
+		double[] darr = {1.5 , 1.6 , 1.7};
+		String[] sarr = {"oskar", "are", "kungen"};
+		for (String name : sarr) {
+		if(name == "kungen") {
+		System.out.println("ja det är han");
+		}
+		else {
+			System.out.println("nej han är inte kungen");
+		}
+			}
+		}
+		}
+	
 
-}
+
