@@ -3,7 +3,7 @@ public class Bubblesort {
 
 	public static void main(String[] args) {
 		
-		int[] arr = {2, 3, 1};
+		int[] arr = {5, 4, 8, 12, 15, 1, 7};
 		
 		bubblesort(arr);
 		
