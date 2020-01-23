@@ -7,5 +7,6 @@
 	<classpathentry kind="src" path="nummer 2/src"/>
 	<classpathentry kind="src" path="nummer 3/src"/>
 	<classpathentry kind="src" path="nummer 4/src"/>
+	<classpathentry kind="src" path="Sortering"/>
 	<classpathentry kind="output" path="Hemuppgifter/bin"/>
 </classpath>
