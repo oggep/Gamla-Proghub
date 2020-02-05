@@ -11,7 +11,7 @@ public class bijele{
 			for (int i = 0; i < number.length; i++) {    
 				number[i] = input.nextInt();
 				
-			System.out.println(number[i] - staff[i] + " ");
+			System.out.println(staff[i] - number[i] + " ");
 			}
 		}
 	}
