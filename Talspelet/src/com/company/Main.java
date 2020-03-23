@@ -84,7 +84,7 @@ import java.util.Scanner;
             int RandomNumber = AnswerNormal.nextInt((100 - 1) + 1 );
             //säkerhetsmeddelande
             System.out.println("Börja Gissa! Obs! skriv endast heltal ");
-            //forloop för att kunna gissa under rätt antal gånge
+            //forloop för att kunna gissa under rätt antal gånger
             for(int Guesses = 0; Guesses < 10; Guesses++){
                 //inputen för att kunna gissa
                 int Guess = input.nextInt();
@@ -114,30 +114,40 @@ import java.util.Scanner;
                 }
             }
 
-
+        //min metod för svårighetsgraden Easy
         private static void easy() {
+            //här är min scanner till metoden
             Scanner input = new Scanner(System.in);
+            //förklarar om nivån
             System.out.println("Du har valt Easy, intervallen är 1-10 med 5 gissningar");
+            //här är min randomizer
             Random AnswerEasy = new Random();
+            //Denna väjer intervallet de slumpade talet kan h
             int RandomNumber = AnswerEasy.nextInt((10 - 1) + 1);
+            //säkerhetsmeddelande
             System.out.println("Börja Gissa! Obs! skriv endast heltal ");
+            //forloop för att kunna gissa under rätt antal gånger
             for(int Guesses = 0; Guesses < 5; Guesses++){
+                //inputen för att kunna gissa
                 int Guess = input.nextInt();
-
+                //om talet är lägre så hamnar man här för att få den infon
                 if(Guess < RandomNumber){
                     System.out.println("Din gissning är lägre än svaret");
                     System.out.println("Testa igen");
 
                 }
+                //om talet är högre så hamnar man här för att få den infon
                 if(Guess > RandomNumber){
                     System.out.println("Din gissning är högre än svaret");
                     System.out.println("Testa igen");
 
                 }
+                //här hamnar man om man har vunnit
                 if(Guess - RandomNumber == 0){
                     System.out.println("Du har vunnit");
 
                 }
+                //här hamnar man om man har gissat för mycket.
                 else if(Guesses == 5) {
                     System.out.println("Du har förlorat");
                 }
