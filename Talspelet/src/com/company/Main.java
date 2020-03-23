@@ -34,15 +34,16 @@ import java.util.Scanner;
 
             int RandomNumber = AnswerHard.nextInt((1000 - 1) + 1 );
             System.out.println("Börja Gissa! Obs! skriv endast heltal ");
-            for(int Guesses = 0; Guesses < 50; Guesses++);{
+            for(int Guesses = 0; Guesses < 50; Guesses++){
                 int Guess = input.nextInt();
 
                 if(Guess < RandomNumber){
                     System.out.println("Din gissning är lägre än svaret");
                     System.out.println("Testa igen");
-                    Guess = input.nextInt();
+
 
                 }
+
                 if(Guess > RandomNumber){
                     System.out.println("Din gissning är högre än svaret");
                     System.out.println("Testa igen");
@@ -51,10 +52,9 @@ import java.util.Scanner;
                 if(Guess - RandomNumber == 0){
                     System.out.println("Du har vunnit");
                 }
-                else {
+                else if(Guesses == 50) {
                     System.out.println("Du har förlorat");
                 }
-
                 }
 
                 }
@@ -68,7 +68,7 @@ import java.util.Scanner;
 
             int RandomNumber = AnswerNormal.nextInt((100 - 1) + 1 );
             System.out.println("Börja Gissa! Obs! skriv endast heltal ");
-            for(int Guesses = 0; Guesses < 15; Guesses++);{
+            for(int Guesses = 0; Guesses < 15; Guesses++){
                 int Guess = input.nextInt();
 
                 if(Guess < RandomNumber){
@@ -86,10 +86,9 @@ import java.util.Scanner;
                 if(Guess - RandomNumber == 16){
                     System.out.println("Du har vunnit");
                 }
-                else {
+                else if(Guesses == 15) {
                     System.out.println("Du har förlorat");
                 }
-
 
                 }
             }
@@ -101,7 +100,7 @@ import java.util.Scanner;
             Random AnswerEasy = new Random();
             int RandomNumber = AnswerEasy.nextInt((10 - 1) + 1);
             System.out.println("Börja Gissa! Obs! skriv endast heltal ");
-            for(int Guesses = 0; Guesses < 5; Guesses++);{
+            for(int Guesses = 0; Guesses < 5; Guesses++){
                 int Guess = input.nextInt();
 
                 if(Guess < RandomNumber){
@@ -118,11 +117,11 @@ import java.util.Scanner;
                     System.out.println("Du har vunnit");
 
                 }
-                else {
+                else if(Guesses == 5) {
                     System.out.println("Du har förlorat");
-
                 }
 
+                }
             }
 
         }
