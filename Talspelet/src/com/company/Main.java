@@ -49,25 +49,33 @@ import java.util.Scanner;
             Random AnswerEasy = new Random();
             Guesses = 5;
             int RandomNumber = AnswerEasy.nextInt((100 - 1) + 1);
+
+
+            System.out.println("Börja Gissa! Obs! skriv endast heltal ");
             for(int z = 0; z <= Guesses; z++);{
                 int Guess = input.nextInt();
 
-                if(Guess < AnswerEasy){
+                if(Guess < RandomNumber){
                     System.out.println("Din gissning är lägre än svaret");
+                    System.out.println("Testa igen");
                 }
-                if(Guess > AnswerEasy){
+                if(Guess > RandomNumber){
                     System.out.println("Din gissning är högre än svaret");
+                    System.out.println("Testa igen");
+                }
+                if(Guess - RandomNumber == 0){
+                    System.out.println("Du har vunnit");
                 }
                 else{
-                    System.out.println("Du har vunnit");
-
+                    System.out.println("Du har förlorat");
                 }
-                break;
             }
-            System.out.println("Du har tyvärr förlorat");
-
-
-
 
         }
     }
+
+
+
+
+
+
