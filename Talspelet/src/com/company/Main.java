@@ -49,8 +49,23 @@ import java.util.Scanner;
             Random AnswerEasy = new Random();
             Guesses = 5;
             int RandomNumber = AnswerEasy.nextInt((100 - 1) + 1);
+            for(int z = 0; z <= Guesses; z++);{
+                int Guess = input.nextInt();
 
-            int Z;
+                if(Guess < AnswerEasy){
+                    System.out.println("Din gissning är lägre än svaret");
+                }
+                if(Guess > AnswerEasy){
+                    System.out.println("Din gissning är högre än svaret");
+                }
+                else{
+                    System.out.println("Du har vunnit");
+
+                }
+                break;
+            }
+            System.out.println("Du har tyvärr förlorat");
+
 
 
 
