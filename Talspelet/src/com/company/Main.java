@@ -34,7 +34,7 @@ import java.util.Scanner;
 
             int RandomNumber = AnswerHard.nextInt((1000 - 1) + 1 );
             System.out.println("Börja Gissa! Obs! skriv endast heltal ");
-            for(int Guesses = 0; Guesses < 50; Guesses++){
+            for(int Guesses = 0; Guesses < 15; Guesses++){
                 int Guess = input.nextInt();
 
                 if(Guess < RandomNumber){
@@ -47,7 +47,7 @@ import java.util.Scanner;
                 if(Guess > RandomNumber){
                     System.out.println("Din gissning är högre än svaret");
                     System.out.println("Testa igen");
-                    Guess = input.nextInt();
+
                 }
                 if(Guess - RandomNumber == 0){
                     System.out.println("Du har vunnit");
@@ -68,22 +68,22 @@ import java.util.Scanner;
 
             int RandomNumber = AnswerNormal.nextInt((100 - 1) + 1 );
             System.out.println("Börja Gissa! Obs! skriv endast heltal ");
-            for(int Guesses = 0; Guesses < 15; Guesses++){
+            for(int Guesses = 0; Guesses < 10; Guesses++){
                 int Guess = input.nextInt();
 
                 if(Guess < RandomNumber){
                     System.out.println("Din gissning är lägre än svaret");
                     System.out.println("Testa igen");
-                    Guess = input.nextInt();
+
 
                 }
                 if(Guess > RandomNumber){
                     System.out.println("Din gissning är högre än svaret");
                     System.out.println("Testa igen");
-                     Guess = input.nextInt();
+
 
                 }
-                if(Guess - RandomNumber == 16){
+                if(Guess - RandomNumber == 0){
                     System.out.println("Du har vunnit");
                 }
                 else if(Guesses == 15) {
@@ -106,12 +106,12 @@ import java.util.Scanner;
                 if(Guess < RandomNumber){
                     System.out.println("Din gissning är lägre än svaret");
                     System.out.println("Testa igen");
-                    Guess = input.nextInt();
+
                 }
                 if(Guess > RandomNumber){
                     System.out.println("Din gissning är högre än svaret");
                     System.out.println("Testa igen");
-                    Guess = input.nextInt();
+
                 }
                 if(Guess - RandomNumber == 0){
                     System.out.println("Du har vunnit");
@@ -125,7 +125,7 @@ import java.util.Scanner;
             }
 
         }
-    }
+
 
 
 
