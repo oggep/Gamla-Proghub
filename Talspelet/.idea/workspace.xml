@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="641b2582-715e-4988-8e4c-8893fee47192" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1585001523057</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="Klar kommenterad">
+      <created>1585003151553</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1585003151553</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,10 +155,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Klar kommenterad" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="114" key="CommitChangelistDialog2" timestamp="1585001521354">
+    <state x="555" y="114" key="CommitChangelistDialog2" timestamp="1585003149916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585001521354" />
+    <state x="555" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585003149916" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584986327588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
