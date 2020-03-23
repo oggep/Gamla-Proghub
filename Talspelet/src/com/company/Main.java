@@ -26,10 +26,28 @@ import java.util.Scanner;
                 hard();
             }
             //Detta är ett felsystem så att man inte ska skriva högre än 3
-            if(Difficulty < 3){
-                System.out.println("Detta alternativet finns inte");
+            if(Difficulty > 3 || Difficulty < 1 ){
+                System.out.println("Detta alternativet finns inte. välj ett mellan 1-3");
+                Difficulty = input.nextInt();
             }
-        }
+            //för att få den att känna av svårighetsgradera senare
+            if(Difficulty == 1){
+                easy();
+            }
+            if(Difficulty == 2 ){
+                normal();
+            }
+            if(Difficulty == 3 ){
+                hard();
+            }
+
+            //Denna kopplar dig direkt till hard om man väljer över 3
+            else{
+                System.out.println("Du valde inte något alternativ som fans så vi flyttar dig till easy");
+                easy();
+            }
+            }
+
         //min metod för svårighetsgraden hard
         private static void hard() {
             //här är min scanner till metoden
