@@ -113,7 +113,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1584999977566</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="Nu funkar den!">
+      <created>1585000317330</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1585000317330</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,13 +132,14 @@
     <MESSAGE value="Fel i test tror det är fel i for looparna" />
     <MESSAGE value="Hittar inte felet" />
     <MESSAGE value="Löste problemet hade ett semicolon efter forloopen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Löste problemet hade ett semicolon efter forloopen" />
+    <MESSAGE value="Nu funkar den!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nu funkar den!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="114" key="CommitChangelistDialog2" timestamp="1584999975926">
+    <state x="555" y="114" key="CommitChangelistDialog2" timestamp="1585000315712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584999975926" />
+    <state x="555" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585000315712" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584986327588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
