@@ -95,7 +95,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1584989737966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Fel i test tror det är fel i for looparna">
+      <created>1584996557234</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1584996557235</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,33 +111,34 @@
     <MESSAGE value="lagt till en for loop" />
     <MESSAGE value="Det är något fel med mina if satser" />
     <MESSAGE value="fixade det och lade till lite nya rader." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixade det och lade till lite nya rader." />
+    <MESSAGE value="Fel i test tror det är fel i for looparna" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fel i test tror det är fel i for looparna" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="114" key="CommitChangelistDialog2" timestamp="1584989736138">
+    <state x="555" y="114" key="CommitChangelistDialog2" timestamp="1584996555600">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584989736138" />
+    <state x="555" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584996555600" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584986327588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584986327588" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584996442047">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584998564103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584996442047" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584996442046">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584998564103" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584998564103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584996442046" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584996442046">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584998564103" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584998564102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584996442046" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584996442046">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584998564102" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584998564103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584996442046" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584998564103" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584691856384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
