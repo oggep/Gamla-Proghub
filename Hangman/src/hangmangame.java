@@ -8,29 +8,35 @@ public class hangmangame {
     private static String[] mediumwords = {"forest", "bottle", "teeth", "bored", "forced", "knife"};
     private static String[] longwords = {"skydiving", "Communicate", "friendzone", "vandalize", "Football", "advanced"};
     private static String word;
-    private static char doeslettermatch;
     private static char[] chararray;
-    private static int wrongguesses = 0;
     private static ArrayList<String> hangmananimation = setuphangman();
-
-    private static ArrayList<String> setuphangman() {
-
-    }
-
+    private static Scanner input = new Scanner(System.in);
+    private static Random rand = new Random();
 
     public static void main(String[] args) {
         word = "";
         startMenu();
+        while (true){
+            startMenu();
+            System.out.println("Do you want to play again?");
+            int playagain =input.nextInt();
+            input.nextLine();
+            if(playagain != 1){
+                break;
+            }
+        }
+        System.out.println("Goodbye!");
     }
 
     public static void startMenu() {
-        Scanner input = new Scanner(System.in);
+
         System.out.println("Welcome to Hangman");
         System.out.println("What length of words do you want?");
         System.out.println("1. Short");
         System.out.println("2. Medium");
         System.out.println("3. Long");
         menu = input.nextInt();
+        input.nextLine();
         switch (menu) {
             case 1:
                 System.out.println("Redirecting you to short words...");
@@ -48,7 +54,6 @@ public class hangmangame {
     }
 
     private static void shortWord() {
-        Random rand = new Random();
         word = shortwords[rand.nextInt(shortwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
@@ -58,7 +63,6 @@ public class hangmangame {
     }
 
     private static void mediumWord() {
-        Random rand = new Random();
         word = mediumwords[rand.nextInt(mediumwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
@@ -68,7 +72,6 @@ public class hangmangame {
     }
 
     private static void longWord() {
-        Random rand = new Random();
         word = longwords[rand.nextInt(longwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
@@ -78,115 +81,82 @@ public class hangmangame {
     }
 
     public static void checkLetter() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Choose a letter!");
-        System.out.println(chararray);
         System.out.println(word);
-        for (int tries = 0; tries >= 6; tries++) {
+        for (int tries = 1; tries <= 7; tries++) {
+            System.out.println("Choose a letter!");
             char letter = input.nextLine().toLowerCase().charAt(0);
-            if(Character.isLetter(letter)){
-                boolean correctletter = false;
-                for (int j = 0; j >= chararray.length; j++) {
-                    if (word.charAt(j) == letter) {
-                        chararray[j] = letter;
-                        System.out.println(chararray);
-                        tries--;
+            if (Character.isLetter(letter)) {
+                if (word.contains(letter + "")) {
+                    for (int j = 0; j < chararray.length; j++) {
+                        if (word.charAt(j) == letter) {
+                            chararray[j] = letter;
+                            tries--;
+                        }
                     }
-                    else if (j == chararray.length){
-                        wrongguesses++;
-                        hangman();}
+                }
+                else {
+                    System.out.println(hangmananimation.get(tries));
+                    System.out.println(7 - tries + " Guesses left");
                 }
             }
-            else{
-                tries--;
-            }
-            }
 
+            System.out.println(chararray);
         }
 
 
-    public static void hangman() {
-        switch (wrongguesses) {
-            case 1:
-                System.out.print("  +---+\n" +
-                        "  |   |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "=========''', '''");
-                System.out.println("6 guesses left");
-                checkLetter();
-                break;
-            case 2:
-                System.out.print("  +---+\n" +
-                        "  |   |\n" +
-                        "  o   |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "=========''', '''");
-                System.out.println("5 guesses left");
-                checkLetter();
-                break;
-            case 3:
-                System.out.print("  +---+\n" +
-                        "  |   |\n" +
-                        "  o   |\n" +
-                        "  |   |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "=========''', '''");
-                System.out.println("4 guesses left");
-                checkLetter();
-                break;
-            case 4:
-                System.out.print("  +---+\n" +
-                        "  |   |\n" +
-                        "  o   |\n" +
-                        " /|   |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "=========''', '''");
-                System.out.println("3 guesses left");
-                checkLetter();
-                break;
-            case 5:
-                System.out.print("  +---+\n" +
-                        "  |   |\n" +
-                        "  o   |\n" +
-                        " /|\\  |\n" +
-                        "      |\n" +
-                        "      |\n" +
-                        "=========''', '''");
-                System.out.println("2 guesses left");
-                checkLetter();
-                break;
-            case 6:
-                System.out.print(" +---+\n" +
-                        "  |   |\n" +
-                        "  o   |\n" +
-                        " /|\\  |\n" +
-                        " /    |\n" +
-                        "      |\n" +
-                        "=========''', '''");
-                System.out.println("1 guesses left");
-                checkLetter();
-                break;
-            case 7:
-                System.out.print("  +---+\n" +
-                        "  |   |\n" +
-                        "  o   |\n" +
-                        " /|\\  |\n" +
-                        " / \\  |\n" +
-                        "      |\n" +
-                        "=========''']");
-                System.out.println("Game over you lost.");
-                System.out.println("The word was:" + " " + word);
-                break;
+    }
 
-        }
-
-
+    private static ArrayList<String> setuphangman() {
+        ArrayList<String> returnvalue = new ArrayList<>();
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                "  |   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|\\  |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add(" +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|\\  |\n" +
+                " /    |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|\\  |\n" +
+                " / \\  |\n" +
+                "      |\n" +
+                "=========''']");
+        return returnvalue;
     }
 }
