@@ -81,7 +81,6 @@ public class hangmangame {
     }
 
     public static void checkLetter() {
-        System.out.println(word);
         for (int tries = 1; tries <= 7; tries++) {
             System.out.println("Choose a letter!");
             char letter = input.nextLine().toLowerCase().charAt(0);
@@ -96,7 +95,7 @@ public class hangmangame {
                 }
                 else {
                     System.out.println(hangmananimation.get(tries));
-                    System.out.println(7 - tries + " Guesses left");
+                    System.out.println(7 - tries + " Guesses left")
                 }
             }
 
@@ -158,5 +157,8 @@ public class hangmangame {
                 "      |\n" +
                 "=========''']");
         return returnvalue;
+    }
+    private static void end(){
+        //här ska man gå till while spela igen men spelet krashar ska försöka lösa det imon.
     }
 }
