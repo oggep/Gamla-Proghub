@@ -6,11 +6,15 @@ public class hangmangame {
     private static String[] shortwords = {"car", "foot", "rain", "sand", "cow", "shoe", "dirt"};
     private static String[] mediumwords = {"forest", "bottle", "teeth", "bored", "forced", "knife"};
     private static String[] longwords = {"skydiving", "Communicate", "friendzone", "vandalize", "Football", "advanced"};
-    private static String word = "";
+    private static String word;
     private static char doeslettermatch;
+    private static char[] rightletters;
+
+
 
 
     public static void main(String[] args) {
+        word = "";
         startMenu();
     }
 
@@ -59,17 +63,29 @@ public class hangmangame {
     public static void checkLetter() {
         Scanner input = new Scanner(System.in);
         System.out.println("Choose a letter!");
+
+
+        char[] chararray = new char[word.length()];
+        System.out.println(word);
+
         doeslettermatch = input.next().toLowerCase().charAt(0);
 
-        char[] chararray = word.toCharArray();
-
-        for (char output : chararray) {
-            if(doeslettermatch == output){
-                System.out.print(doeslettermatch);
-            }
-            else
-                System.out.print("_");
-            }
+        for (int i = 0; i < chararray.length; i++) {
+            System.out.print("_");
         }
-    }
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == doeslettermatch) {
+                rightletters[i] = doeslettermatch;
+        }
+
+                    //for (int i; i < rightletters; i++)
+                    //doeslettermatch == rightletters[i];
+
+                }
+            }
+
+
+
+
+}
 
