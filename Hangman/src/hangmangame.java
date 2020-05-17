@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class hangmangame {
     private static int menu = 0;
@@ -33,16 +34,19 @@ public class hangmangame {
         }
     }
     private static void shortWord() {
-        word = hangmangame.shortwords[(int) (Math.random() * shortwords.length)];
+        Random rand = new Random();
+        word = shortwords[rand.nextInt(shortwords.length)];
         chooseWord();
     }
     private static void mediumWord() {
-        word = hangmangame.mediumwords[(int) (Math.random() * mediumwords.length)];
+        Random rand = new Random();
+        word = mediumwords[rand.nextInt(mediumwords.length)];
         chooseWord();
     }
         
     private static void longWord() {
-        word = hangmangame.shortwords[(int) (Math.random() * shortwords.length)];
+        Random rand = new Random();
+        word = longwords[rand.nextInt(longwords.length)];
         chooseWord();
     }
              public static void chooseWord(){
