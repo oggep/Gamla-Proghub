@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -9,10 +10,12 @@ public class hangmangame {
     private static String word;
     private static char doeslettermatch;
     private static char[] chararray;
+    private static int wrongguesses = 0;
+    private static ArrayList<String> hangmananimation = setuphangman();
 
+    private static ArrayList<String> setuphangman() {
 
-
-
+    }
 
 
     public static void main(String[] args) {
@@ -49,7 +52,8 @@ public class hangmangame {
         word = shortwords[rand.nextInt(shortwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
-            chararray[i] = '_';}
+            chararray[i] = '_';
+        }
         checkLetter();
     }
 
@@ -58,7 +62,8 @@ public class hangmangame {
         word = mediumwords[rand.nextInt(mediumwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
-            chararray[i] = '_';}
+            chararray[i] = '_';
+        }
         checkLetter();
     }
 
@@ -66,37 +71,122 @@ public class hangmangame {
         Random rand = new Random();
         word = longwords[rand.nextInt(longwords.length)];
         chararray = new char[word.length()];
-        for(int i = 0; i < chararray.length; i++) {
-            chararray[i] = '_';}
-        checkLetter(char[] chararray);
+        for (int i = 0; i < chararray.length; i++) {
+            chararray[i] = '_';
+        }
+        checkLetter();
     }
 
-    public static void checkLetter(char chararray1) {
+    public static void checkLetter() {
         Scanner input = new Scanner(System.in);
         System.out.println("Choose a letter!");
-        System.out.println(chararray1);
-
-
-
+        System.out.println(chararray);
         System.out.println(word);
-
-        char letter = input.next().toLowerCase().charAt(0);
-            for(int j = 0; j < chararray.length; j++) {
-            if (word.charAt(j) == letter) {
-                chararray[j] = letter;
+        for (int tries = 0; tries >= 6; tries++) {
+            char letter = input.nextLine().toLowerCase().charAt(0);
+            if(Character.isLetter(letter)){
+                boolean correctletter = false;
+                for (int j = 0; j >= chararray.length; j++) {
+                    if (word.charAt(j) == letter) {
+                        chararray[j] = letter;
+                        System.out.println(chararray);
+                        tries--;
+                    }
+                    else if (j == chararray.length){
+                        wrongguesses++;
+                        hangman();}
+                }
+            }
+            else{
+                tries--;
+            }
             }
 
         }
 
 
+    public static void hangman() {
+        switch (wrongguesses) {
+            case 1:
+                System.out.print("  +---+\n" +
+                        "  |   |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "=========''', '''");
+                System.out.println("6 guesses left");
+                checkLetter();
+                break;
+            case 2:
+                System.out.print("  +---+\n" +
+                        "  |   |\n" +
+                        "  o   |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "=========''', '''");
+                System.out.println("5 guesses left");
+                checkLetter();
+                break;
+            case 3:
+                System.out.print("  +---+\n" +
+                        "  |   |\n" +
+                        "  o   |\n" +
+                        "  |   |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "=========''', '''");
+                System.out.println("4 guesses left");
+                checkLetter();
+                break;
+            case 4:
+                System.out.print("  +---+\n" +
+                        "  |   |\n" +
+                        "  o   |\n" +
+                        " /|   |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "=========''', '''");
+                System.out.println("3 guesses left");
+                checkLetter();
+                break;
+            case 5:
+                System.out.print("  +---+\n" +
+                        "  |   |\n" +
+                        "  o   |\n" +
+                        " /|\\  |\n" +
+                        "      |\n" +
+                        "      |\n" +
+                        "=========''', '''");
+                System.out.println("2 guesses left");
+                checkLetter();
+                break;
+            case 6:
+                System.out.print(" +---+\n" +
+                        "  |   |\n" +
+                        "  o   |\n" +
+                        " /|\\  |\n" +
+                        " /    |\n" +
+                        "      |\n" +
+                        "=========''', '''");
+                System.out.println("1 guesses left");
+                checkLetter();
+                break;
+            case 7:
+                System.out.print("  +---+\n" +
+                        "  |   |\n" +
+                        "  o   |\n" +
+                        " /|\\  |\n" +
+                        " / \\  |\n" +
+                        "      |\n" +
+                        "=========''']");
+                System.out.println("Game over you lost.");
+                System.out.println("The word was:" + " " + word);
+                break;
 
-
-               }
         }
+
+
     }
-
-
-
-
-
-
+}
