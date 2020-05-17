@@ -51,22 +51,22 @@ public class hangmangame {
     private static void longWord() {
         Random rand = new Random();
         word = longwords[rand.nextInt(longwords.length)];
-        wordScan();
+        chooseWord();
     }
 
     public static void chooseWord() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Choose a letter!");
+        char doeslettermatch = input.next().charAt(0);
         char[] chararray = word.toCharArray();
 
         for (char output : chararray) {
-            System.out.println(output);
-        Scanner input = new Scanner(System.in);
-        char doeslettermatch = input.next().charAt(0);
-        for (doeslettermatch : word.length()) {
-            if(doeslettermatch == chararray){
-                System.out.println(doeslettermatch);
+            if(doeslettermatch == output){
+                System.out.print(doeslettermatch);
             }
-
+            else
+                System.out.print("*");
             }
         }
     }
-}
+
