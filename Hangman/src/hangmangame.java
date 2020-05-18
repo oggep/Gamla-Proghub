@@ -22,8 +22,7 @@ public class hangmangame {
             System.out.println("");
             System.out.println("Do you want to play again?");
             System.out.println("Press 1 if you want to play again.");
-            int playagain = input.nextInt();
-            input.nextLine();
+            int playagain = getValidIntegerInput();
             if (playagain != 1) {
                 break;
             }
@@ -40,25 +39,25 @@ public class hangmangame {
         System.out.println("2. Medium");
         System.out.println("3. Long");
         System.out.println("Only numbers!");
-        menu = input.nextInt();
-        input.nextLine();
-        if (menu > 3) {
-            System.out.println("This difficulty doesn't exist. Automaticly switching you to short words.");
-            menu = 1;
-        }
-        switch (menu) {
-            case 1:
-                System.out.println("Redirecting you to short words...");
-                shortWord();
-                break;
-            case 2:
-                System.out.println("Redirecting you to medium words...");
-                mediumWord();
-                break;
-            case 3:
-                System.out.println("Redirecting you to long words...");
-                longWord();
-                break;
+        while (true) {
+            menu = getValidIntegerInput();
+            switch (menu) {
+                case 1:
+                    System.out.println("Redirecting you to short words...");
+                    shortWord();
+                    break;
+                case 2:
+                    System.out.println("Redirecting you to medium words...");
+                    mediumWord();
+                    break;
+                case 3:
+                    System.out.println("Redirecting you to long words...");
+                    longWord();
+                    break;
+                default:
+                    System.out.println("you need to put a number between 1-3");
+                    continue;
+            }
         }
     }
 
@@ -102,79 +101,99 @@ public class hangmangame {
                         if (word.charAt(j) == letter) {
                             chararray[j] = letter;
                             tries--;
-                            for (int i = 0; i < chararray.length; i++) {
-                                if (chararray[i] == '_') ;
-                                {
-                                    boolean won = false;
-                                }
-
-                            }
                         }
                     }
                 } else {
                     System.out.println(hangmananimation.get(tries - 1));
                     System.out.println(7 - tries + " Wrong Guesses left");
                 }
-                System.out.println(chararray);
+            } else {
+                System.out.println("Only letters allow!");
+                tries--;
+                continue;
             }
-
-
+            System.out.println(chararray);
+            if (word.equals(new String(chararray))) {
+                System.out.println("You have won!");
+                break;
+            }
         }
 
-
-        private static ArrayList<String> setUpHangman(){
-            ArrayList<String> returnvalue = new ArrayList<>();
-            returnvalue.add("  +---+\n" +
-                    "  |   |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "=========''', '''");
-            returnvalue.add("  +---+\n" +
-                    "  |   |\n" +
-                    "  o   |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "=========''', '''");
-            returnvalue.add("  +---+\n" +
-                    "  |   |\n" +
-                    "  o   |\n" +
-                    "  |   |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "=========''', '''");
-            returnvalue.add("  +---+\n" +
-                    "  |   |\n" +
-                    "  o   |\n" +
-                    " /|   |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "=========''', '''");
-            returnvalue.add("  +---+\n" +
-                    "  |   |\n" +
-                    "  o   |\n" +
-                    " /|\\  |\n" +
-                    "      |\n" +
-                    "      |\n" +
-                    "=========''', '''");
-            returnvalue.add(" +---+\n" +
-                    "  |   |\n" +
-                    "  o   |\n" +
-                    " /|\\  |\n" +
-                    " /    |\n" +
-                    "      |\n" +
-                    "=========''', '''");
-            returnvalue.add("  +---+\n" +
-                    "  |   |\n" +
-                    "  o   |\n" +
-                    " /|\\  |\n" +
-                    " / \\  |\n" +
-                    "      |\n" +
-                    "=========''']");
-            return returnvalue;
-        }
 
     }
+
+
+    private static ArrayList<String> setUpHangman() {
+        ArrayList<String> returnvalue = new ArrayList<>();
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                "  |   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|   |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|\\  |\n" +
+                "      |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add(" +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|\\  |\n" +
+                " /    |\n" +
+                "      |\n" +
+                "=========''', '''");
+        returnvalue.add("  +---+\n" +
+                "  |   |\n" +
+                "  o   |\n" +
+                " /|\\  |\n" +
+                " / \\  |\n" +
+                "      |\n" +
+                "=========''']");
+
+        return returnvalue;
+
+
+    }
+    private static int getValidIntegerInput() {
+        while (true) {
+            if (!input.hasNextInt()) {
+                input.nextLine();
+                System.out.println("Input a number!");
+                continue;
+            }
+
+            int returnValue = input.nextInt();
+            input.nextLine();
+            return returnValue;
+        }
+    }
+
 }
+
+
+
