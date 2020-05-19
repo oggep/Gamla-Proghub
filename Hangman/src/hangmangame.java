@@ -17,6 +17,7 @@ public class hangmangame {
     private static Scanner input = new Scanner(System.in);
     private static Random rand = new Random();
 
+
     //Detta är min main-metod och den kopplar bara spelaren till spelets startmeny.
     public static void main(String[] args) {
         startMenu();
