@@ -63,6 +63,7 @@ public class hangmangame {
     }
 
     private static void shortWord() {
+        word = "";
         word = shortwords[rand.nextInt(shortwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
@@ -72,6 +73,7 @@ public class hangmangame {
     }
 
     private static void mediumWord() {
+        word = "";
         word = mediumwords[rand.nextInt(mediumwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
@@ -81,6 +83,7 @@ public class hangmangame {
     }
 
     private static void longWord() {
+        word = "";
         word = longwords[rand.nextInt(longwords.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
