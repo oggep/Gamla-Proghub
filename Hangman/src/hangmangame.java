@@ -3,18 +3,22 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class hangmangame {
-    private static int menu = 0;
+
+    //Dessa string arrayer är orden spelen kan välja mellan.
     private static String[] shortwords = {"car", "foot", "rain", "sand", "cow", "shoe", "dirt"};
     private static String[] mediumwords = {"forest", "bottle", "teeth", "bored", "forced", "knife"};
     private static String[] longwords = {"skydiving", "Communicate", "friendzone", "vandalize", "Football", "advanced"};
+
+    //Variablerna under är mina globala variabler.
     private static String word;
+    private static int menu = 0;
     private static char[] chararray;
     private static ArrayList<String> hangmananimation = setUpHangman();
     private static Scanner input = new Scanner(System.in);
     private static Random rand = new Random();
 
+    //Detta är min main-metod och den kopplar bara spelaren till spelets startmeny.
     public static void main(String[] args) {
-        word = "";
         startMenu();
     }
 
