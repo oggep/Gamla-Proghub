@@ -16,12 +16,13 @@ public class hangmangame {
     public static void main(String[] args) {
         word = "";
         startMenu();
+    }
+
+    public static void playAgainOrEnd(){
         while (true) {
             System.out.println("");
-            System.out.println("You lost!");
-            System.out.println("");
             System.out.println("Do you want to play again?");
-            System.out.println("Press 1 if you want to play again.");
+            System.out.println("Press 1 if you want to play again, press any key expect 1 don't want to play again.");
             int playagain = getValidIntegerInput();
             if (playagain != 1) {
                 break;
@@ -100,6 +101,7 @@ public class hangmangame {
                     for (int j = 0; j < chararray.length; j++) {
                         if (word.charAt(j) == letter) {
                             chararray[j] = letter;
+                            System.out.println(chararray);
                             tries--;
                         }
                     }
@@ -108,15 +110,22 @@ public class hangmangame {
                     System.out.println(7 - tries + " Wrong Guesses left");
                 }
             } else {
-                System.out.println("Only letters allow!");
+                System.out.println("Only letters allowed!");
                 tries--;
                 continue;
             }
-            System.out.println(chararray);
             if (word.equals(new String(chararray))) {
-                System.out.println("You have won!");
-                break;
+                System.out.println("");
+                System.out.println("Congratulations! You have won!");
+                playAgainOrEnd();
             }
+            if (7 - tries == 0){
+                System.out.println("");
+                System.out.println("You have lost!");
+                System.out.println("The word was " + word);
+                playAgainOrEnd();
+            }
+
         }
 
 
@@ -183,7 +192,7 @@ public class hangmangame {
         while (true) {
             if (!input.hasNextInt()) {
                 input.nextLine();
-                System.out.println("Input a number!");
+                System.out.println("Write a number between 1-3!");
                 continue;
             }
 
