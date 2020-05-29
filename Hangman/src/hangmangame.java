@@ -8,7 +8,7 @@ public class hangmangame {
     private static String[] shortwords = {"car", "foot", "rain", "sand", "cow", "shoe", "dirt"};
     private static String[] mediumwords = {"forest", "bottle", "teeth", "bored", "forced", "knife"};
     private static String[] longwords = {"skydiving", "Communicate", "friendzone", "vandalize", "Football", "advanced"};
-
+    private static String[] chosenwordlist;
     //Variablerna under är mina globala variabler.
     private static String word;
     private static int menu = 0;
@@ -16,31 +16,33 @@ public class hangmangame {
     private static ArrayList<String> hangmananimation = setUpHangman();
     private static Scanner input = new Scanner(System.in);
     private static Random rand = new Random();
+    private static boolean ifplaying;
+
 
 
     //Detta är min main-metod och den kopplar bara spelaren till spelets startmeny.
     public static void main(String[] args) {
-        startMenu();
+        while(true) {
+                startMenu();
+                System.out.println("");
+                System.out.println("Do you want to play again?");
+                System.out.println("Press 1 if you want to play again, press 2 or 3 if you don't want to play again.");
+                int playagain = getValidIntegerInput();
+                if (playagain != 1) {
+                break;
+                }
+        }
+        System.out.println("Goodbye!");
+        System. exit(0);
     }
+
     /*
     Detta är min metod om man vill spela igen när man har spelat spelet redan. Då kommer en meny som frågar om man
     vill spela igen och den ger instruktioner till hur man spelar igen genom att trycka på 1an på
     ditt tangentbord annars om man trycker på något annat så slutar spelet.
      */
-    public static void playAgainOrEnd(){
-        while (true) {
-            System.out.println("");
-            System.out.println("Do you want to play again?");
-            System.out.println("Press 1 if you want to play again, press 2 or 3 if you don't want to play again.");
-            int playagain = getValidIntegerInput();
-            if (playagain != 1) {
-                break;
-            }
-            startMenu();
-        }
-        System.out.println("Goodbye!");
-        System. exit(0);
-    }
+
+
     /*
         Detta är min startmeny och här väljer man vilken svårighetsgrad man vill spela som korta, mellanlånga,
         långa ord. Man skriver in siffran framför svårighetsgraden för att välja den så 1 är korta ord sen så kopplas
@@ -54,67 +56,47 @@ public class hangmangame {
         System.out.println("2. Medium");
         System.out.println("3. Long");
         System.out.println("Only numbers!");
-        while (true) {
+
+        do {
             menu = getValidIntegerInput();
+
+        } while (1 > menu || menu > 3);
             switch (menu) {
                 case 1:
                     System.out.println("Redirecting you to short words...");
-                    shortWord();
+                    chosenwordlist = shortwords;
+                    Chosingword();
                     break;
                 case 2:
                     System.out.println("Redirecting you to medium words...");
-                    mediumWord();
+                    chosenwordlist = mediumwords;
+                    Chosingword();
                     break;
                 case 3:
                     System.out.println("Redirecting you to long words...");
-                    longWord();
+                    chosenwordlist = longwords;
+                    Chosingword();
                     break;
                 default:
                     System.out.println("you need to put a number between 1-3");
-                    continue;
+                    break;
             }
-        }
+
     }
     /*
         Detta är metoden för shortWord och det är här de korta orden slumpas och väljer ett av dem och
         Tömmer chararrayen så man kan gissa i den senare kopplas man vidare till checkLetter.
      */
-    private static void shortWord() {
+    private static void Chosingword() {
         word = "";
-        word = shortwords[rand.nextInt(shortwords.length)];
+        word = chosenwordlist[rand.nextInt(chosenwordlist.length)];
         chararray = new char[word.length()];
         for (int i = 0; i < chararray.length; i++) {
             chararray[i] = '_';
         }
         checkLetter();
     }
-    /*
-        Detta är metoden för mediumWord och det är här de mellanlånga orden slumpas och väljer ett av dem och
-        Tömmer chararrayen så man kan gissa i den senare kopplas man vidare till checkLetter.
-     */
-    private static void mediumWord() {
-        word = "";
-        word = mediumwords[rand.nextInt(mediumwords.length)];
-        chararray = new char[word.length()];
-        for (int i = 0; i < chararray.length; i++) {
-            chararray[i] = '_';
-        }
-        checkLetter();
-    }
-    /*
-        Detta är metoden för longWord och det är här de långa orden slumpas och väljer ett av dem och den skapar
-        en char array av ordet. Sen tömmer chararrayen så man kan gissa i den.
-        Den senare kopplas man vidare till checkLetter.
-     */
-    private static void longWord() {
-        word = "";
-        word = longwords[rand.nextInt(longwords.length)];
-        chararray = new char[word.length()];
-        for (int i = 0; i < chararray.length; i++) {
-            chararray[i] = '_';
-        }
-        checkLetter();
-    }
+
     /*
         Detta är själva huvudpunketen av spelet där saker händer. Först går man igenom en for loop som alltid
         lägger till en tries och den göra att man bara kan gissa fel 7 gånger.
@@ -165,7 +147,8 @@ public class hangmangame {
             if (word.equals(new String(chararray))) {
                 System.out.println("");
                 System.out.println("Congratulations! You have won!");
-                playAgainOrEnd();
+                ifplaying = true;
+                break;
             }
             /*
                 Denna dyker upp om du förlorar för du har gissat 7 olika gånger.
@@ -175,7 +158,7 @@ public class hangmangame {
                 System.out.println("");
                 System.out.println("You have lost!");
                 System.out.println("The word was " + word);
-                playAgainOrEnd();
+                break;
             }
 
         }
